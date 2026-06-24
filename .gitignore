@@ -1,0 +1,12 @@
+# Système Mac
+.DS_Store
+*/.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserdata
+*.xcuserstate
+
+# Firebase
+GoogleService-Info.plist
