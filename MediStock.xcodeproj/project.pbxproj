@@ -11,7 +11,6 @@
 		53E0D8992C06084700DE1134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8982C06084700DE1134 /* ContentView.swift */; };
 		53E0D89B2C06084900DE1134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E0D89A2C06084900DE1134 /* Assets.xcassets */; };
 		53E0D89E2C06084900DE1134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E0D89D2C06084900DE1134 /* Preview Assets.xcassets */; };
-		53E0D8A82C06084900DE1134 /* MediStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8A72C06084900DE1134 /* MediStockTests.swift */; };
 		53E0D8B22C06084900DE1134 /* MediStockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8B12C06084900DE1134 /* MediStockUITests.swift */; };
 		53E0D8B42C06084900DE1134 /* MediStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8B32C06084900DE1134 /* MediStockUITestsLaunchTests.swift */; };
 		53E0D8C22C06092E00DE1134 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 53E0D8C12C06092E00DE1134 /* FirebaseAnalytics */; };
@@ -41,6 +40,7 @@
 		6203B4BA2FF2D7B6005C9C19 /* FirestoreRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203B4B92FF2D7B6005C9C19 /* FirestoreRepositories.swift */; };
 		6203B4BC2FF2DD92005C9C19 /* MockRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6203B4BB2FF2DD92005C9C19 /* MockRepositories.swift */; };
 		624A12202FF41EDF001418AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 624A121F2FF41EDF001418AA /* GoogleService-Info.plist */; };
+		624A128B2FF45D15001418AA /* MedicineStockViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624A128A2FF45D15001418AA /* MedicineStockViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		53E0D89A2C06084900DE1134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E0D89D2C06084900DE1134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53E0D8A32C06084900DE1134 /* MediStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53E0D8A72C06084900DE1134 /* MediStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediStockTests.swift; sourceTree = "<group>"; };
 		53E0D8AD2C06084900DE1134 /* MediStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E0D8B12C06084900DE1134 /* MediStockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediStockUITests.swift; sourceTree = "<group>"; };
 		53E0D8B32C06084900DE1134 /* MediStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		6203B4B92FF2D7B6005C9C19 /* FirestoreRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepositories.swift; sourceTree = "<group>"; };
 		6203B4BB2FF2DD92005C9C19 /* MockRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositories.swift; sourceTree = "<group>"; };
 		624A121F2FF41EDF001418AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		624A128A2FF45D15001418AA /* MedicineStockViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStockViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 		53E0D8A62C06084900DE1134 /* MediStockTests */ = {
 			isa = PBXGroup;
 			children = (
-				53E0D8A72C06084900DE1134 /* MediStockTests.swift */,
+				624A128A2FF45D15001418AA /* MedicineStockViewModelTests.swift */,
 			);
 			path = MediStockTests;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53E0D8A82C06084900DE1134 /* MediStockTests.swift in Sources */,
+				624A128B2FF45D15001418AA /* MedicineStockViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

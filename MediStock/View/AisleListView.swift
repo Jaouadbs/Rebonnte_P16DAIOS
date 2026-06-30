@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AisleListView: View {
-    @ObservedObject var viewModel = MedicineStockViewModel()
+    @Environment(MedicineStockViewModel.self) private var viewModel
 
     var body: some View {
         NavigationView {
@@ -29,4 +29,10 @@ struct AisleListView_Previews: PreviewProvider {
     static var previews: some View {
         AisleListView()
     }
+}
+#Preview {
+    AisleListView()
+        .environment(MedicineStockViewModel(
+            medicineRepository: MockMedicineRepository(),
+            historyRepository: MockHistoryRepository()))
 }
