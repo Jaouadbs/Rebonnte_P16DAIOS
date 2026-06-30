@@ -2,9 +2,12 @@ import Foundation
 import Firebase
 
 class SessionStore: ObservableObject {
+
     @Published var session: User?
+
     var handle: AuthStateDidChangeListenerHandle?
 
+    // Ecouteur en temps réel
     func listen() {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
@@ -15,6 +18,7 @@ class SessionStore: ObservableObject {
         }
     }
 
+    // Inscription d'un nouvel utilisateur
     func signUp(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
@@ -25,6 +29,7 @@ class SessionStore: ObservableObject {
         }
     }
 
+    // Connexion d'un utilisateur existant
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
@@ -35,6 +40,7 @@ class SessionStore: ObservableObject {
         }
     }
 
+    // Déconnexion
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -44,6 +50,7 @@ class SessionStore: ObservableObject {
         }
     }
 
+    // Nettoyage des écouteurs
     func unbind() {
         if let handle = handle {
             Auth.auth().removeStateDidChangeListener(handle)
