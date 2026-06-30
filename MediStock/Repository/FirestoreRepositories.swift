@@ -12,7 +12,11 @@ import FirebaseFirestoreSwift
 // MARK: - FirestoreMedicineRepository
 final class FirestoreMedicineRepository: MedicineRepository {
 
-    private let collection = Firestore.firestore().collection("medicines")
+    // Propriété calculée : Firestore.firestore() n'est appelé qu'au premier accès
+       // (dans une méthode), donc après FirebaseApp.configure(). Évite le crash au lancement.
+    private var collection: CollectionReference {
+        Firestore.firestore().collection("medicines")
+    }
 
     // MARK: Lecture
     func fetchMedicines() async throws -> [Medicine] {
@@ -30,13 +34,13 @@ final class FirestoreMedicineRepository: MedicineRepository {
     }
     func updateMedicine(_ medicine: Medicine) async throws {
         guard let id = medicine.id else {
-            throw AppError.invalidData("Medicament dans indentifiant.")
+            throw AppError.invalidData("Medicament sans indentifiant.")
         }
         try collection.document(id).setData(from: medicine)
     }
     func deleteMedicine(_ medicine: Medicine) async throws  {
         guard let id = medicine.id else {
-            throw AppError.invalidData("Medicament dans indentifiant.")
+            throw AppError.invalidData("Medicament sans indentifiant.")
         }
         try await collection.document(id).delete()
     }
@@ -46,7 +50,10 @@ final class FirestoreMedicineRepository: MedicineRepository {
 
 final class FirestoreHistoryRepository: HistoryRepository {
 
-    private let collection = Firestore.firestore().collection("history")
+    // Idem : propriété calculée pour ne toucher Firestore qu'après la configuration.
+    private var collection: CollectionReference {
+        Firestore.firestore().collection("history")
+    }
 
     func fetchHistory(forMedicineId medicineId: String) async throws -> [HistoryEntry] {
         let snapshot = try await collection
