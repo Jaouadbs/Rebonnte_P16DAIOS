@@ -8,5 +8,13 @@ DerivedData/
 *.xcuserdata
 *.xcuserstate
 
-# Firebase
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Firebase Private tokens and sensitive credentials
 GoogleService-Info.plist
+Secrets.xcconfig
+
+# Xcode automatic plist
+Info.plist
